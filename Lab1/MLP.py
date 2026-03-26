@@ -51,6 +51,13 @@ for i in range(len(X)):
     pred_label = 1 if predictions[i] > 0.5 else 0
     print(f"Вхід: {X[i]} -> Результат: {pred_label} (ймовірність: {predictions[i][0]:.4f})")
 
+acc_history = history.history['accuracy']
+if 1.0 in acc_history:
+    first_epoch_100 = acc_history.index(1.0) + 1
+    print(f"\nМодель досягла 100% точності на {first_epoch_100}-й епосі.")
+else:
+    print("\n100% точність не була досягнута.")
+
 plt.figure(figsize=(8, 5))
 plt.plot(history.history['accuracy'], label='Accuracy')
 plt.title('Точність під час навчання')
