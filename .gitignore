@@ -1,3 +1,6 @@
 .venv/ 
 .idea/ 
 __pycache__/ 
+raw-img/
+animals10.zip
+*.pyc
